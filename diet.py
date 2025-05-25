@@ -3,8 +3,10 @@ import pandas as pd
 import google.generativeai as genai
 
 # Configure Gemini API key
-genai.configure(api_key="AIzaSyARK4nJZRCOLUgoS8w5temtyNtidK24H8E")
+api_key=st.secrets["bilal_api"]
 
+# Configure Gemini API key
+genai.configure(api_key=api_key)
 # Initialize Gemini model
 model = genai.GenerativeModel("gemini-2.0-flash")
 chat = model.start_chat(history=[])
